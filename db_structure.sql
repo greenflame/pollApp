@@ -3,6 +3,7 @@ CREATE TABLE `User` (
   `Login` varchar(32) NOT NULL,
   `Password` varchar(32) NOT NULL
 );
+
 CREATE TABLE `Poll` (
   `Id` int(16) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Author` int(16) NOT NULL,
