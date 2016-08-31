@@ -29,6 +29,14 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/polls', {
+        templateUrl: 'views/pollsList.html',
+        controller: 'PollsListCtrl',
+      })      
+      .when('/polls/:id/edit', {
+        templateUrl: 'views/editPoll.html',
+        controller: 'EditPollCtrl',
+      })      
       .otherwise({
         redirectTo: '/'
       });
