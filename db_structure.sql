@@ -1,7 +1,7 @@
-CREATE TABLE `User` (
-  `Id` int(16) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `Login` varchar(32) NOT NULL,
-  `Password` varchar(32) NOT NULL
+CREATE TABLE if not exists `Users` (
+  `id` int(16) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `login` varchar(32) NOT NULL,
+  `password_hash` varchar(32) NOT NULL
 );
 
 CREATE TABLE `Poll` (
@@ -13,7 +13,7 @@ CREATE TABLE `Poll` (
   INDEX `PollAuthorIndex` (`Author`),
 
   CONSTRAINT `PollAuthorFK` FOREIGN KEY
-    (`Author`) REFERENCES `User` (`Id`)
+    (`Author`) REFERENCES `Users` (`id`)
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
