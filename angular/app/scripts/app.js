@@ -22,21 +22,19 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
       })
       .when('/polls', {
         templateUrl: 'views/pollsList.html',
         controller: 'PollsListCtrl',
-      })      
+      })
       .when('/polls/:id/edit', {
         templateUrl: 'views/editPoll.html',
         controller: 'EditPollCtrl',
-      })      
+      })
       .otherwise({
         redirectTo: '/'
       });

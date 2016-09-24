@@ -14,15 +14,15 @@ class Questions_model extends CI_Model {
     }
 
     public function read($id) {
-        return $this->db->get_where('Question', ['id'=> $id])->result_array()[0];
+        return $this->db->get_where('Question', ['Id'=> $id])->result_array()[0];
     }
 
     public function update($Question) {
-        return $this->db->update('Question', $Question, ['id' => $Question->id]);
+        return $this->db->update('Question', $Question, ['Id' => $Question->Id]);
     }
 
     public function delete($id) {
-        return $this->db->delete('Question', ['id' => $id]);
+        return $this->db->delete('Question', ['Id' => $id]);
     }
 }
 

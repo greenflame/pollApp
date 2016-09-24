@@ -1,1 +1,18 @@
-{{ pollId }}
+{{ poll }}
+
+<h3>Poll info</h3>
+<p>Id: {{ poll.Id }}</p>
+<p>Author: {{ poll.Author.login }}</p>
+
+<h3>Questions</h3>
+<div ng-repeat="q in poll.Questions">
+  <p>Id: {{ q.Id }}, num: {{ q.Number }}</p>
+  <div>Caption: </div><input type="text" ng-model="q.Caption">
+  <div>Body: </div><input type="text" ng-model="q.Body">
+  <li ng-click="moveUp($index)">up</li>
+  <li ng-click="moveDown($index)">down</li>
+  <li ng-click="deleteQuestion(q.Id)">delete</li>
+</div>
+
+<h3 ng-click="updateQuestions()">Save</h3>
+<h3 ng-click="createQuestion()">New</h3>

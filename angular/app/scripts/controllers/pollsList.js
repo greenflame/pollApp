@@ -20,7 +20,7 @@ angular.module('angularApp').controller('PollsListCtrl', function ($scope, $loca
             description: $scope.description
         };
 
-        $http.get('../../index.php/polls/create?json=' + angular.toJson(poll)).then(function(data) {
+        $http.get('../../index.php/polls/create?json=' + angular.toJson(poll)).then(function() {
             $scope.loadPolls();
         });
     };
