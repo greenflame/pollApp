@@ -2,6 +2,10 @@
 
 angular.module('angularApp').controller('PollsListCtrl', function ($scope, $location, $http) {
 
+  $scope.pollResults = function($id) {
+    $location.path('polls/' + $id + '/results');
+  };
+
   $scope.takePoll = function($id) {
     $location.path('polls/' + $id + '/take');
   };

@@ -39,6 +39,10 @@ angular
         templateUrl: 'views/takePoll.html',
         controller: 'TakePollCtrl'
       })
+      .when('/polls/:id/results', {
+        templateUrl: 'views/pollResults.html',
+        controller: 'PollResultsCtrl'
+      })
       .when('/thank', {
         templateUrl: 'views/thank.html',
         controller: 'ThankCtrl'

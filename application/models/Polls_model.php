@@ -19,6 +19,12 @@ class Polls_model extends CI_Model {
         $this->db->order_by("Number", "asc");
         $questions = $this->db->get_where('Question', ['Poll' => $id])->result_array();
 
+        for ($i = 0; $i < count($questions); ++$i) {
+            $this->db->order_by("Date", "desc");
+            $answers = $this->db->get_where('Answer', ['Question' => $questions[$i]['Id']])->result_array();
+            $questions[$i]['Answers'] = $answers;
+        }
+
         $author = $this->db->get_where('Users', ['id'=> $poll['Author']])->result_array()[0];
         unset($author['password_hash']);
 

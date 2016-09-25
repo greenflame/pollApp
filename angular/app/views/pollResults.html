@@ -1,0 +1,12 @@
+results
+
+{{ poll }}
+
+<h2>Results</h2>
+
+<div ng-repeat="q in poll.Questions">
+  <h3>{{ q.Caption }}</h3>
+  <div ng-repeat="a in q.Answers">
+    <div>{{ a.Body }}</div>
+  </div>
+</div>
