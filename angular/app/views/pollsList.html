@@ -1,24 +1,25 @@
 <table style="margin:10px;">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Author</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Details</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="poll in polls">
-            <td>{{ poll.Id }}</td>
-            <td>{{ poll.Author }}</td>
-            <td>{{ poll.Name }}</td>
-            <td>{{ poll.Description }}</td>
-            <td><input type="button" ng-click="editPoll(poll.Id)" value="details"></td>
-            <td><input type="button" ng-click="deletePoll(poll.Id)" value="delete"></td>
-        </tr>
-    </tbody>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Author</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Details</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="poll in polls">
+    <td>{{ poll.Id }}</td>
+    <td>{{ poll.Author }}</td>
+    <td>{{ poll.Name }}</td>
+    <td>{{ poll.Description }}</td>
+    <td><input type="button" ng-click="editPoll(poll.Id)" value="edit"></td>
+    <td><input type="button" ng-click="takePoll(poll.Id)" value="take"></td>
+    <td><input type="button" ng-click="deletePoll(poll.Id)" value="delete"></td>
+  </tr>
+  </tbody>
 </table>
 
 
