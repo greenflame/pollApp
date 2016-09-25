@@ -66,6 +66,9 @@ angular.module('angularApp').controller('EditPollCtrl', function ($scope, $locat
   $scope.loadPoll = function () {
     $http.get('../../index.php/polls/read?id=' + $routeParams.id).then(function (resp) {
       $scope.poll = resp.data;
+      setTimeout(function () {
+        $('select').material_select();
+      }, 10);
     });
   };
 

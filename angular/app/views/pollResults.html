@@ -1,12 +1,9 @@
-results
-
-{{ poll }}
-
-<h2>Results</h2>
+<h3>{{ poll.Name }} [results]</h3>
+<p> {{ poll.Description }}</p>
 
 <div ng-repeat="q in poll.Questions">
-  <h3>{{ q.Caption }}</h3>
-  <div ng-repeat="a in q.Answers">
-    <div>{{ a.Body }}</div>
-  </div>
+  <h5>{{ q.Caption }}</h5>
+  <ul class="collection">
+    <li class="collection-item" ng-repeat="a in q.Answers">{{ a.Body }}</li>
+  </ul>
 </div>

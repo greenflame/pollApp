@@ -1,31 +1,30 @@
 <table style="margin:10px;">
   <thead>
   <tr>
-    <th>Id</th>
-    <th>Author</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Details</th>
-    <th>Delete</th>
+    <th style="width: 50%">Name</th>
+    <th style="width: 50%">Description</th>
   </tr>
   </thead>
   <tbody>
   <tr ng-repeat="poll in polls">
-    <td>{{ poll.Id }}</td>
-    <td>{{ poll.Author }}</td>
     <td>{{ poll.Name }}</td>
     <td>{{ poll.Description }}</td>
-    <td><input type="button" ng-click="editPoll(poll.Id)" value="edit"></td>
-    <td><input type="button" ng-click="takePoll(poll.Id)" value="take"></td>
-    <td><input type="button" ng-click="pollResults(poll.Id)" value="results"></td>
-    <td><input type="button" ng-click="deletePoll(poll.Id)" value="delete"></td>
+    <td><a class="waves-effect waves-teal btn-flat" ng-click="editPoll(poll.Id)">Edit</a></td>
+    <td><a class="waves-effect waves-teal btn-flat" ng-click="pollResults(poll.Id)">Results</a></td>
+    <td><a class="waves-effect waves-teal btn-flat" ng-click="takePoll(poll.Id)">Take</a></td>
+    <td><a class="waves-effect waves-teal btn-flat" ng-click="deletePoll(poll.Id)">Delete</a></td>
   </tr>
   </tbody>
 </table>
 
-
-<label>Name</label>
-<input type="text" name="name" placeholder="Name" ng-model="name">
-<label>Description</label>
-<input type="text" name="description" placeholder="Description" ng-model="description">
-<button class="ui button" ng-click="createPoll()">Create</button>
+<div class="input-field col s6">
+  <input id="name" type="text" class="validate" ng-model="name">
+  <label for="name">Name</label>
+</div>
+<div class="input-field col s6">
+  <input id="description" type="text" class="validate" ng-model="description">
+  <label for="description">Description</label>
+</div>
+<div>
+  <a class="waves-effect waves-light btn" ng-click="createPoll()">Create</a>
+</div>

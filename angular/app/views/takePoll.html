@@ -1,13 +1,20 @@
-{{ poll }}
+<h3>{{ poll.Name }}</h3>
+<p> {{ poll.Description }}</p>
 
-<h3>Poll info</h3>
-<p>Author: {{ poll.Author.login }}</p>
-<p>Poll: {{ poll.Name }}</p>
-
-<h3>Questions</h3>
 <div ng-repeat="q in poll.Questions">
-  <div>{{ q.Caption }}</div>
-  <textarea rows="4" cols="50" ng-model="q.Answer"></textarea>
+
+  <div class="card white">
+    <div class="card-content">
+
+      <span class="card-title">{{ $index + 1 }}. {{ q.Caption }}</span>
+
+      <div>
+        <input id="caption" type="text" class="validate" ng-model="q.Answer">
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
-<h3 ng-click="submitQuestions()">Submit</h3>
+<a class="waves-effect waves-light btn" ng-click="submitQuestions()">Submit</a>

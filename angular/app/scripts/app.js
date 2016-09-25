@@ -48,6 +48,6 @@ angular
         controller: 'ThankCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/polls'
       });
   });

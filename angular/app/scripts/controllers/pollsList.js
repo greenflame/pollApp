@@ -31,6 +31,8 @@ angular.module('angularApp').controller('PollsListCtrl', function ($scope, $loca
 
     $http.get('../../index.php/polls/create?json=' + angular.toJson(poll)).then(function () {
       $scope.loadPolls();
+      $scope.name = '';
+      $scope.description = '';
     });
   };
 
