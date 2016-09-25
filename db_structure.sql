@@ -35,6 +35,7 @@ CREATE TABLE `Answer` (
   `Id` int(16) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Question` int(16) NOT NULL,
   `Body` text NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
   INDEX `AnswerQuestionFK` (`Question`),
 
